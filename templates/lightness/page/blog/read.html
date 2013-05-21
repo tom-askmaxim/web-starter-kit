@@ -1,0 +1,48 @@
+<script src="<?$template?>/SyntaxHighlighter/scripts/shCore.js" type="text/javascript"></script>
+<script src="<?$template?>/SyntaxHighlighter/scripts/shAutoloader.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" media="all" href="<?$template?>/SyntaxHighlighter/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" media="all" href="<?$template?>/SyntaxHighlighter/styles/shThemeDefault.css"/>
+<div class="atk-row">
+    <div class="span9">
+        <h1>Category#1</h1>
+        <?Post?>
+        <h3><?title?>Here will be my post title<?/?></h3>
+        <a href="<?page?>blog<?/?>">back</a>
+        <div><?detail?>xxx<?/?></div>
+        <?$month?>        
+        <?/Post?>
+        <div>
+        <?ListComment?>
+            <?rows?>
+            <?row?>
+            <div class="list-data" style="min-height: 80px;" title="<?$title?>">
+                <span class="list-tr">Date : 22/04/2556</span><span class="list-tr">+1 (128)</span>
+                <img src="../../upload/0/20130505093417__baca.jpg" align="left"/>
+                <div class="list-content">                
+                    <h3><?title?>Here will be my post title<?/?></h3>
+                    <div><?intro?>Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum Lorem ispum <?/?></div>
+                    <a href="<?$link?>">Read more</a>
+                </div>
+            </div>
+            <?/row?>
+            <?/rows?>
+        <?/ListComment?>
+        </div>
+        <?$Content?>
+    </div>
+    <div class="span3"><?$Menublog?></div>
+</div>
+<!-- echo_analize_blog_read_form_comment -->
+<script>
+    /*
+    CKEDITOR.replace('echo_analize_blog_read_form_comment', {
+        toolbar: [
+            ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
+            ['Blockquote', 'TextColor', 'BGColor', 'Underline', 'Smiley'],
+            ['Syntaxhighlight']
+        ]
+    });
+    */
+    //CKEDITOR.replace('ta');
+</script>
+<script src="<?$template?>/load_syntaxhighlighter.js" type="text/javascript"></script>

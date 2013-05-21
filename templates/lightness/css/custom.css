@@ -1,0 +1,142 @@
+/* 
+    Document   : custom
+    Created on : 17 พ.ค. 2556, 20:20:44
+    Author     : Tom (tom-askmaxim@admin.in.th)
+    Description:
+        Custom style sheet.
+*/
+.ui-icon{
+    float: left;
+}
+.span3 div.atk-box:hover{
+    color: #EB8F00;
+}
+.login-hrd{
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: -23px;
+    margin-right: -23px;
+    border-bottom: 1px #CCC dotted;
+    padding-bottom: 5px;
+    text-align: center;
+    color: #a2aab2;
+}
+.txt-msg{
+    color: #606670;
+}
+.login-alt{
+    margin-top: -46px; float: right; text-align: right;
+    padding-right: 22px;
+}
+.reg-class,.forget-pass{
+    float: right;
+    margin-top: -70px;
+    margin-right: 25px;
+    font-weight: bold;
+    color: #27B;
+   cursor: pointer;
+}
+.forget-pass{
+    margin-top: -50px;
+}
+.reg-class:hover,.forget-pass:hover{
+    color: #059;
+}
+.spacing{
+    padding: 20px;
+}
+.hrd-title a{
+    padding-left: 10px;
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration:none;
+}
+.hrd-title a:hover{
+    color: #059;
+}
+.txt-detail{
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px #BBB dotted;
+    color: #555;
+}
+.none-top .txt-detail:last-child{
+    border: none;
+}
+#echo_analize_index_form{
+    padding: 2em;
+}
+.atk-box{
+    word-wrap: break-word;
+    padding: 10px;
+}
+.span-header{
+    padding: 10px;
+    background-color: #CCC;
+    font-size: 16px;
+    color: #555;
+    text-align: left;
+}
+.span-header a{
+    float: right;
+    font-size: 13px;
+}
+.span-header a:hover{
+    color: #059;
+}
+.none-top{
+    border-top: none;
+}
+
+.blog-menu{
+    width: 45%; float: left; margin-right: 7%;
+    min-height: 130px;
+    margin-bottom: 7%;
+}
+.blog-menu:hover{
+    box-shadow: #555 0px 1px 2px;
+}
+div.atk-row div.blog-menu:nth-of-type(even){
+    margin-right: 0px;
+}
+.blog-menu div.txt-menu{
+    padding: 10px;
+}
+.list-data{
+    border-top: 1px #EEE solid;
+    padding: 15px;
+}
+.list-data:hover{
+    background-color: #EFE;
+}
+.list-data img{
+    width: 120px;
+    height: 75px;
+    padding: 2px;
+    border: 1px #EEE solid;
+    background-color: #FFF;
+}
+.list-data:hover img{
+    border: 1px #CCC solid;
+}
+.list-data div.list-content{
+    margin-left: 140px;
+}
+.list-data div.list-content h3{
+    width: 72%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.list-data span.list-tr{
+    float: right;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #EEE;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+span.list-tr:first-child{
+    margin-right: 0px;
+}

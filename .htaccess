@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteRule ^(index.php.*)$      $1          [L]
+RewriteRule ^[^\.]*$            index.php    [L]
+RewriteRule /$              index.php    [L]
+
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?echoanalize.com [NC]
+#RewriteRule \.(jpg|jpeg|png|gif|css|js|php)$ echoanalize.com [NC,R,L]

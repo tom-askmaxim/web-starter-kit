@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="./jquery.snippet.min.css?v1" rel="stylesheet" />        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/latest/jquery.js" type="text/javascript"></script>
+        <script src="./jquery.snippet.min.js?v=1" type="text/javascript"></script>        
+    </head>
+    <body>
+        <pre>
+            <h1>Snippet style selector</h1>
+            <div class="instructions">
+                <p>Choose your style below.</p>
+                <p>Preview your style here.</p>
+            </div>
+        </pre>
+        <script>
+            $(document).ready(function() {
+                $("pre").snippet("html");
+            });
+        </script>
+    </body>
+</html>

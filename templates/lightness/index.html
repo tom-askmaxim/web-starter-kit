@@ -1,0 +1,60 @@
+<div id="demo-gs" class="section">
+    <div class="atk-row" title="3 column layout">
+        <div class="span8">
+            <div class="atk-row" title="3 column layout">
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div></div>
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+            </div>
+            <div class="atk-row" title="3 column layout">
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                <div class="span6"><div class="atk-box ui-widget-content ui-corner-all">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div></div>
+            </div>
+            
+        </div>
+        <div class="span4">
+            <?$Content?>
+            <!--
+            <div class="login-alt">
+                <?RegisterLink?><a href="#">xxRegister</a><?/RegisterLink?>
+                <br/>
+                <a href="#">Forget password</a>
+            </div>
+            -->
+        </div>
+    </div>
+    <div class="spacing"></div>
+    <div style="padding: 5px"> </div>
+    <div class="atk-row">
+        <div class="span6">
+            <div class="span-header ui-state-default ui-corner-top"><i class="atk-icon atk-icons-gray atk-icon-office-filledfile"></i>Forum updated
+                <a href="#">See more<i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i></a></div>
+            <div class="ui-widget-content none-top">
+                <?Listboard?>
+                <?rows?>
+                <?row?>
+                <span class="hrd-title"><a href="<?$link?>"><?topic?>Here will be my post title<?/?></a></span>
+                <div class="txt-detail"><?detail?>Lorem ispum.<?/?></div>
+                <?/row?>
+                <?/rows?>
+                <?/Listboard?>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="span-header ui-state-default ui-corner-top"><i class="atk-icon atk-icons-gray atk-icon-office-filledfile"></i>Blogs updated
+                <a href="#">See more<i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i></a></div>
+            <div class="ui-widget-content none-top">
+                <?Listblog?>
+                <?rows?>
+                <?row?>
+                <span class="hrd-title"><a href="<?$link?>"><?title?>Here will be my post title<?/?></a></span>
+                <div class="txt-detail"><?intro?>Lorem ispum.<?/?></div>
+                <?/row?>
+                <?/rows?>
+                <?/Listblog?>
+            </div>
+        </div>
+    </div>
+</div>
