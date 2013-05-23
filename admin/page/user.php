@@ -11,9 +11,12 @@ class page_user extends Page {
 
         $model_user->addExpression('full_name')->set('concat(first_name," ",last_name)')->caption('Full name');
         $crud = $this->add('CRUD');
+        //$crud->add('Icon');
+        //$crud->add_button->set("Add New Scholar");
         $crud->setModel($model_user, $form_set, $show);
 
         if ($crud->grid) {
+            $crud->grid->addClass('zebra bordered');
             $crud->grid->setSource('User');
             $crud->grid->addQuickSearch($show, 'QuickSearch', array('show_cancel' => true));
             foreach ($show as $value) {

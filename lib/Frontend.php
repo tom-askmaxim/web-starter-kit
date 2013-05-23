@@ -21,7 +21,13 @@ class Frontend extends ApiFrontend {
                     )
                 ))
                 ->setParent($this->pathfinder->base_location);
-
+        $this->addLocation('.', array(
+                    'addons' => 'ambient-addons'
+                        )
+                )
+                ->setParent($this->pathfinder->base_location)
+                ->setRelativePath("");
+        $this->add("cms/Controller_Cms");
         // A lot of the functionality in Agile Toolkit requires jUI
         $this->add('jUI');
 
@@ -34,9 +40,7 @@ class Frontend extends ApiFrontend {
                 ->_load('ui.atk4_notify')
         ;
 
-        $this->pathfinder->addLocation('.', array('addons' => 'ambient-addons')
-        );
-        $this->add("cms/Controller_Cms");
+
         // If you wish to restrict access to your pages, use BasicAuth class
 
         $this->api->template->set('date_copy', date("Y"));
@@ -48,9 +52,10 @@ class Frontend extends ApiFrontend {
         // If you are using a complex menu, you can re-define
         // it and place in a separate class
         $this->add('Auth')->usePasswordEncryption('sha256/salt')->setModel('User');
-        $this->auth->allowPage(array('index','blog',
-            'blog/read'
-            ));
+//        $this->auth->allowPage(array('index', 'blog',
+//            'blog/read',
+//            'cmsadmin/cmson/launch/'
+//        ));
         //$this->auth->check();
         if ($this->auth->isLoggedIn()) {
             $mm = $this->add('Menu', null, 'Menu');
@@ -60,6 +65,7 @@ class Frontend extends ApiFrontend {
         $this->add('Menu', null, 'Menu')
                 ->addMenuItem('index', 'Welcome')
                 ->addMenuItem('blog', 'Blogs')
+                ->addMenuItem('forum', 'Forum')
                 ->addMenuItem('examples', 'Bundled Examples')
                 ->addMenuItem('how', 'Documentation')
                 ->addMenuItem('dbtest', 'Database Test')
@@ -68,7 +74,7 @@ class Frontend extends ApiFrontend {
 
 
         //$this->addLayout('UserMenu');
-        $this->auth->check();
+        //$this->auth->check();
     }
 
     function layout_UserMenu() {

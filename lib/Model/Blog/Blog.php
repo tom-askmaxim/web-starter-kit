@@ -30,6 +30,7 @@ class Model_Blog_Blog extends Model_Table {
         $this->addField('edit_time');
         $this->addField('views')->defaultValue(0);
         $this->hasOne('User', 'user_id', 'display_name')->defaultValue($this->api->auth->get('id'));
+        //$this->hasMany('Blog_Comment');
     }
 
 }

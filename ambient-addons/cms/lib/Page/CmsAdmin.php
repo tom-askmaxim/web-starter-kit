@@ -61,7 +61,6 @@ class Page_CmsAdmin extends \Page {
             $a->memorize('cmsediting',true);
             $a->memorize('cmslevel',$this->level); // switch to true to have plain cms mode
             header('Location: '.$this->api->pm->base_path);
-            //header('Location: '.$this->api->pm->base_path.'..');
             exit;
         }else{
             $this->api->memorize('cmsediting',true);

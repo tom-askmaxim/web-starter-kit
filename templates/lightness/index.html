@@ -1,3 +1,17 @@
+<!--
+<script type="text/javascript" src="/echo_analize/templates/js/sharrre/jquery.sharrre-1.3.4.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+-->
+<style type="text/css">
+    #sharepie{
+        display:none;
+    }
+    .sharrre .button{
+        float:left;
+        width:60px;
+    }
+</style>
+
 <div id="demo-gs" class="section">
     <div class="atk-row" title="3 column layout">
         <div class="span8">
@@ -8,21 +22,37 @@
                 <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
             </div>
             <div class="atk-row" title="3 column layout">
-                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
-                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
-                <div class="span6"><div class="atk-box ui-widget-content ui-corner-all">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div></div>
+                <div class="span6">
+                    <div class="atk-row" title="3 column layout">
+                        <div class="span4"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                        <div class="span4"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                        <div class="span4"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                    </div>
+                    <div class="atk-row" title="3 column layout">
+                        <div class="span12"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                    </div> 
+                </div>
+                <div class="span6">                    
+                    <div class="atk-box ui-widget-content ui-corner-all">
+                        <div id="sharepie"></div>
+                        <div id="pie"></div>
+                    </div>
+
+                </div>
             </div>
-            
+
         </div>
         <div class="span4">
-            <?$Content?>
-            <!--
-            <div class="login-alt">
-                <?RegisterLink?><a href="#">xxRegister</a><?/RegisterLink?>
-                <br/>
-                <a href="#">Forget password</a>
+            <div class="atk-row" title="3 column layout">
+                <div class="span12">
+                    <?$Content?>
+                </div>
             </div>
-            -->
+            <div class="atk-row" title="3 column layout">
+                <div class="span12">
+                    <div id="shareme" data-url="http://sharrre.com/" data-text="Make your sharing widget with Sharrre (jQuery Plugin)"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="spacing"></div>
@@ -30,7 +60,7 @@
     <div class="atk-row">
         <div class="span6">
             <div class="span-header ui-state-default ui-corner-top"><i class="atk-icon atk-icons-gray atk-icon-office-filledfile"></i>Forum updated
-                <a href="#">See more<i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i></a></div>
+                <a href="./forum">See more<i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i></a></div>
             <div class="ui-widget-content none-top">
                 <?Listboard?>
                 <?rows?>
@@ -44,7 +74,7 @@
         </div>
         <div class="span6">
             <div class="span-header ui-state-default ui-corner-top"><i class="atk-icon atk-icons-gray atk-icon-office-filledfile"></i>Blogs updated
-                <a href="#">See more<i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i></a></div>
+                <a href="./blog">See more<i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i></a></div>
             <div class="ui-widget-content none-top">
                 <?Listblog?>
                 <?rows?>
@@ -58,3 +88,73 @@
         </div>
     </div>
 </div>
+<script>
+/*
+    //$(document).ready(function() {
+    google.load("visualization", "1", {packages: ["corechart"]});
+
+    $('#sharepie').sharrre({
+        share: {
+            googlePlus: true,
+            facebook: true,
+            twitter: true,
+            digg: true,
+            delicious: true,
+            stumbleupon: true,
+            linkedin: true
+        },
+        url: 'http://code.google.com',
+        enableHover: false,
+        render: function(api, options) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Social network');
+            data.addColumn('number', 'Sharing');
+            data.addRows(6);
+            data.setValue(0, 0, 'Google Plus');
+            data.setValue(0, 1, options.count.googlePlus);
+            data.setValue(1, 0, 'Facebook');
+            data.setValue(1, 1, options.count.facebook);
+            data.setValue(2, 0, 'Twitter');
+            data.setValue(2, 1, options.count.twitter);
+            data.setValue(3, 0, 'Digg');
+            data.setValue(3, 1, options.count.digg);
+            data.setValue(3, 0, 'Delicious');
+            data.setValue(3, 1, options.count.delicious);
+            data.setValue(4, 0, 'Stumbleupon');
+            data.setValue(4, 1, options.count.stumbleupon);
+            data.setValue(5, 0, 'Linkedin');
+            data.setValue(5, 1, options.count.linkedin);
+//console.log(options.count);
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie'));
+            chart.draw(data, {width: 500, height: 300, title: 'Total: ' + options.total, backgroundColor: 'none'});
+        }
+    });
+    //});
+    $('#shareme').sharrre({
+        share: {
+            googlePlus: true,
+            facebook: true,
+            twitter: true,
+            digg: true,
+            delicious: true,
+            stumbleupon: true,
+            linkedin: true
+            //pinterest: true
+        },
+        buttons: {
+            googlePlus: {size: 'tall', annotation: 'bubble'},
+            facebook: {layout: 'box_count'},
+            twitter: {count: 'vertical'},
+            digg: {type: 'DiggMedium'},
+            delicious: {size: 'tall'},
+            stumbleupon: {layout: '5'},
+            linkedin: {counter: 'top'},
+            pinterest: {media: 'http://sharrre.com/img/example1.png', description: $('#shareme').data('text'), layout: 'vertical'}
+        },
+        enableHover: false,
+        enableCounter: false,
+        enableTracking: true
+    });
+    */
+</script>

@@ -1,6 +1,9 @@
 <?php
-class Model_Board_Topic extends Model_Table{
+
+class Model_Board_Topic extends Model_Table {
+
     public $table = 'topic';
+
     function init() {
         parent::init();
         $this->addField('topic')->mandatory(true);
@@ -23,9 +26,13 @@ class Model_Board_Topic extends Model_Table{
                 ))
                 ->mandatory(true)->defaultValue('public');
         $this->addField('is_major')->type('boolean');
-        $this->addField('board_id')->refModel('Board_Board')->mandatory(true);
+        $this->addField('board_id')->refModel('Board_Board')->mandatory(true)->caption('Forum');
         //$this->addField('user_id')->defaultValue($this->api->auth->get('id'))->mandatory(true);
         $this->addField('views');
-        $this->hasOne('User', 'user_id', 'display_name')->defaultValue($this->api->auth->get('id'))->mandatory(true);
+        if ($this->api->auth->isLoggedIn())
+            $this->hasOne('User', 'user_id', 'display_name')->defaultValue($this->api->auth->get('id'))->mandatory(true);
+        else
+            $this->hasOne('User', 'user_id', 'display_name');
     }
+
 }

@@ -9,10 +9,11 @@
         <h3><?title?>Here will be my post title<?/?></h3>
         <a href="<?page?>blog<?/?>">back</a>
         <div><?detail?>xxx<?/?></div>
-        <?$month?>        
+        <?$month?> 
         <?/Post?>
         <div>
         <?ListComment?>
+        <div id="<?$_name?>">
             <?rows?>
             <?row?>
             <div class="list-data" style="min-height: 80px;" title="<?$title?>">
@@ -26,9 +27,12 @@
             </div>
             <?/row?>
             <?/rows?>
-        <?/ListComment?>
+            <div class="container-paging"><?$Paginator?></div>
         </div>
+        <?/ListComment?>
         <?$Content?>
+        </div>
+        
     </div>
     <div class="span3"><?$Menublog?></div>
 </div>

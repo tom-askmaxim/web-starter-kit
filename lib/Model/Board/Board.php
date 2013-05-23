@@ -3,7 +3,7 @@ class Model_Board_Board extends Model_Table{
     public $table = 'board';
     function init() {
         parent::init();
-        $this->addField('name')->mandatory(true);
+        $this->addField('name')->mandatory(true)->caption('Forum');
         $this->addField('description')->type('text');
         $this->addField('keywords');
         $this->addField('created')->type('datetime')->defaultValue(date('Y-m-d H:i:s'));

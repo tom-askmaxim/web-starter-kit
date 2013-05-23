@@ -14,7 +14,7 @@ class page_index extends Page {
             $form->addField('line', 'email')->validateNotNull('Please enter email')->validateField('filter_var($this->get(), FILTER_VALIDATE_EMAIL)', 'Email invalid');
             $form->addfield('password', 'password')->validateNotNull('Please enter password');
             //->setFieldHint('Click "Register" to create new member');
-            $form->addSubmit('Login');
+            $form->addSubmit('Login')->setIcon('ui-icon-person');
             $this->api->template->set($form);
             $form->addClass('atk-box ui-state-default ui-corner-all');
             $reg_form = $this->add('Form');
@@ -38,8 +38,8 @@ class page_index extends Page {
             $forgot_frm->js(true)->hide();
 
             $p_reg = $this->add('p');
-            $p_reg->add('p')->addClass('reg-class')->set('Register')->js('click', $reg_form->js()->dialog());
-
+            //$p_reg->add('p')->addClass('reg-class')->set('Register')->js('click', $reg_form->js()->dialog());
+            $p_reg->add('p')->addClass('reg-class')->set('Register')->js('click')->univ()->frameURL('Register new member',  $this->api->url('./register'),array('width'=>'550px'));
             $p_pass = $this->add('p');
             $p_pass->add('p')->addClass('forget-pass')->set('Forget password')->js('click', $forgot_frm->js()->dialog());
 
@@ -102,7 +102,7 @@ class ListBoard extends CompleteLister {
     function formatRow() {
         $this->current_row['detail'] = mb_substr($this->current_row['detail'], 0, 300);
         $this->current_row['topic'] = mb_substr($this->current_row['topic'], 0, 300);
-        $this->current_row['link'] = $this->api->getDestinationURL('blog/read', array('id' => $this->current_row['id']));
+        $this->current_row['link'] = $this->api->getDestinationURL('forum/read', array('id' => $this->current_row['id']));
     }
 
 }
