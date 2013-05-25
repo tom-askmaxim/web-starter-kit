@@ -78,12 +78,15 @@
     color: #555;
     text-align: left;
 }
-.span-header a{
+.span-header a:last-child{
     float: right;
     font-size: 13px;
 }
 .span-header a:hover{
     color: #059;
+}
+.span-header-blog a:last-child{
+    float: none;
 }
 .none-top{
     border-top: none;
@@ -106,6 +109,8 @@ div.atk-row div.blog-menu:nth-of-type(even){
 .list-data{
     border-top: 1px #EEE solid;
     padding: 15px;
+    height: 85px;
+    padding-bottom: 12px;
 }
 .container-paging,.container-paging-none{
     border-top: 1px #CCC dotted;
@@ -130,13 +135,19 @@ div.atk-row div.blog-menu:nth-of-type(even){
 }
 .list-data div.list-content{
     margin-left: 140px;
+    height: 95px;
 }
-.list-data div.list-content h3{
-    width: 72%;
-    white-space: nowrap;
+.list-data div.list-content div{
+    height: 40px;
     overflow: hidden;
 }
-.list-data span.list-tr{
+.list-data div.list-content h3{
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.list-data div span.list-tr{
     float: right;
     padding: 5px;
     padding-left: 8px;
@@ -144,6 +155,41 @@ div.atk-row div.blog-menu:nth-of-type(even){
     background-color: #EEE;
     border-radius: 2px;
     margin-right: 10px;
+    margin-top: 2px;
+}
+.blog-content{    
+    border: 1px #CCC dotted;
+    padding: 10px;
+    border-top: none;
+    padding-bottom: 20px;
+    border-bottom: 1px #777 solid;
+}
+.list-comment{
+    height: auto;
+    min-height: 100px;
+    border-top: 1px #DDD solid;
+    padding-top: 10px;
+}
+.list-comment img{
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+    border: 1px #DDD solid;
+    margin-left: 30px;
+}
+.list-comment img:hover{
+    border: 1px #CCC solid;
+
+}
+.list-comment div.list-comment-txt{
+    margin-left: 130px;
+}
+.users-comment{
+    padding-bottom: 5px;
+    color: #225f2d;
+}
+.users-comment a{
+    text-decoration: none;
 }
 span.list-tr:first-child{
     margin-right: 0px;

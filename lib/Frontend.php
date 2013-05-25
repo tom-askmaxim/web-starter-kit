@@ -22,7 +22,9 @@ class Frontend extends ApiFrontend {
                 ))
                 ->setParent($this->pathfinder->base_location);
         $this->addLocation('.', array(
-                    'addons' => 'ambient-addons'
+                    'addons' => 'ambient-addons',
+                    'css'=>'ambient-addons/cms/templates/default/css',
+                    'template'=>'ambient-addons/cms/templates'
                         )
                 )
                 ->setParent($this->pathfinder->base_location)
@@ -98,6 +100,18 @@ class Frontend extends ApiFrontend {
     function page_examples($p) {
         header('Location: ' . $this->pm->base_path . 'examples');
         exit;
+    }
+    
+    function replace_string($subject){
+        $pattern[] = "<script>";
+        $pattern[] = "</script>";        
+        $replacement[] = '<[script]>';
+        $replacement[] = '<[/script]>';
+        foreach ($pattern as $key => $value) {
+            $subject = str_replace($value, $replacement[$key], $subject);
+        }
+        return $subject;
+        
     }
 
 }

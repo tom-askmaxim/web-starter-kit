@@ -19,7 +19,11 @@ class page_blog extends Page {
         $show = array('title', 'detail', 'detail', 'status', 'created', 'blog_category_id', 'allow_comment', 'views', 'user');
         $form = array('title', 'detail', 'keywords', 'status', 'blog_category_id', 'allow_comment', 'views');
         $crud_blog->setModel($model_blog, $form, $show);
-
+        if($crud_blog->form){
+            $crud_blog->form->getElement('detail')
+                ->js(true)
+                ->elrte();
+        }
         if ($filter->isSubmitted()) {
             if ($filter->isClicked($clear)) {
                 $this->forget();
@@ -66,6 +70,29 @@ class page_blog extends Page {
             $crud_cate->grid->addQuickSearch($cate_show);
             $crud_cate->grid->addPaginator(10);
         }
+        
+        $tab = $tabs->addTab('New blog');
+        $tab->add('h2')->set('Create new blog');
+        $form = $tab->add('Form'); 
+        $form->setModel($model_blog);
+        $form->addSubmit('Create');
+        $cancel = $form->addButton('Cancel');
+        $cancel->js('click',$form->js()->reload());       
+                //$lister->js()->reload()->execute();
+        
+        
+        
+        $this->api->jui->addStaticInclude('elrte/js/elrte.min');
+        $form->getElement('detail')
+                ->js(true)
+                ->elrte(array(
+                    'cssClass' =>'el-rte',
+				// lang     : 'ru',
+				'height'=> 450,
+				'toolbar'=>'complete'
+				//'cssfiles' => ['css/elrte-inner.css']
+                ));
+        //$('#editor').elrte(opts);
     }
 
 }
