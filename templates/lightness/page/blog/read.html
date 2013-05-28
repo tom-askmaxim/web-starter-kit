@@ -1,9 +1,7 @@
-<!--
 <script src="<?$template?>/SyntaxHighlighter/scripts/shCore.js" type="text/javascript"></script>
 <script src="<?$template?>/SyntaxHighlighter/scripts/shAutoloader.js" type="text/javascript"></script>
 <link type="text/css" rel="stylesheet" media="all" href="<?$template?>/SyntaxHighlighter/styles/shCore.css"/>
-<link type="text/css" rel="stylesheet" media="all" href="<?$template?>/SyntaxHighlighter/styles/shThemeDefault.css"/>
--->
+<link type="text/css" rel="stylesheet" media="all" href="<?$template?>/SyntaxHighlighter/styles/shThemeEclipse.css"/>
 <style>
     h3{
         margin-top: 5px;
@@ -38,6 +36,13 @@
                         </div>
                         <div><?desciption?>Comment detail<?/?></div>
                     </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('.atk-paginator a').on('click', function() {
+                                reloadSH();
+                            });
+                        });
+                    </script>
                 </div>
                 <?/row?>
                 <?/rows?>
@@ -50,12 +55,11 @@
     </div>
     <div class="span3"><?$Menublog?></div>
 </div>
-<!-- echo_analize_blog_read_form_comment -->
+<script src="<?$template?>load_syntaxhighlighter.js" type="text/javascript"></script>
 <script>
     $(document).ready(function() {
-        //$("code").snippet();
+        $('#echo_analize_blog_read_form_form_submit').on('click', function() {
+            reloadSH();
+        });
     });
 </script>
-<!--
-<script src="<?$template?>/load_syntaxhighlighter.js" type="text/javascript"></script>
--->

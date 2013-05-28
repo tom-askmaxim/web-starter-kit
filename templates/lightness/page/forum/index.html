@@ -1,0 +1,29 @@
+<div class="atk-row">
+    <div class="span9">
+        <div class="span-header ui-state-default ui-corner-top"><i class="atk-icon atk-icons-gray atk-icon-office-filledfile"></i>Forum updated
+            <a href="./create/"><i class="atk-icon atk-icons-nobg atk-icon-basic-plus"></i>New topic</a></div>
+        <?Posts?> 
+        <div id="<?$_name?>">
+        <?rows?>
+            <?row?>
+            <div class="list-forum" title="<?$title?>">
+                <img src="../templates/images/page_php.png" align="left"/>
+                <div class="list-content">              
+                    <div class="topic-title"><a href="<?$link?>"><?title?>Show title<?/?></a></div>
+                    <span class="list-tr">Date : <?created?>d-m-Y<?/?></span>
+                    <span class="list-tr">Views : <?views?>0<?/?></span>
+                    <span class="list-tr">Reply : <?reply_count?>0<?/?></span>
+                    <div>
+                        <span class="update-time">Update : <?updated?>date time<?/?></span>
+                    </div>
+                </div>
+            </div>
+            <?/row?>
+            <?/rows?>
+            <div class="container-paging"><?$Paginator?></div>
+        </div>
+        <?/Posts?>        
+        <?$Content?>
+    </div>
+    <div class="span3"><?$Menuforum?></div>
+</div>

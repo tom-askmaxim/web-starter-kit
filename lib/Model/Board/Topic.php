@@ -27,6 +27,9 @@ class Model_Board_Topic extends Model_Table {
                 ->mandatory(true)->defaultValue('public');
         $this->addField('is_major')->type('boolean');
         $this->addField('board_id')->refModel('Board_Board')->mandatory(true)->caption('Forum');
+        $this->addField('user_comment');
+        //$this->addField('updated')->type('datetime')->defaultValue(date('Y-m-d H:i:s'));
+        $this->hasMany('Board_Reply');
         //$this->addField('user_id')->defaultValue($this->api->auth->get('id'))->mandatory(true);
         $this->addField('views');
         if ($this->api->auth->isLoggedIn())

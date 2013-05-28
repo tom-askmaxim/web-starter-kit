@@ -1,7 +1,4 @@
-<!--
-<script type="text/javascript" src="/echo_analize/templates/js/sharrre/jquery.sharrre-1.3.4.min.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
--->
+<script type="text/javascript" src="./templates/js/jquery.cycle.all.js"></script>
 <style type="text/css">
     #sharepie{
         display:none;
@@ -15,29 +12,46 @@
 <div id="demo-gs" class="section">
     <div class="atk-row" title="3 column layout">
         <div class="span8">
-            <div class="atk-row" title="3 column layout">
-                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div></div>
-                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+            <div class="atk-row" title="PHP Advance">
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">
+                        <img src="./templates/images/php-logo.png" width="50" align="left" style="margin-right: 10px;"/>
+                        รวบรวมเทคนิคและวิธีการใช้งาน ในการพัฒนาโปรเว็บไซต์ด้วย PHP รวมถึงเครื่องมือและส่วนเสริมต่างๆ ที่สามารถเพิ่มประสิธิภาพของ Web application
+                        <a href="#"><i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i>See more</a>
+                    </div></div>
+                <div class="span3"><div class="atk-box ui-state-default ui-corner-all">555</div></div>
                 <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
                 <div class="span3"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
             </div>
-            <div class="atk-row" title="3 column layout">
+            <div class="atk-row">
                 <div class="span6">
                     <div class="atk-row" title="3 column layout">
                         <div class="span4"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
                         <div class="span4"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
                         <div class="span4"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
                     </div>
-                    <div class="atk-row" title="3 column layout">
-                        <div class="span12"><div class="atk-box ui-state-default ui-corner-all">xxxx</div></div>
+                    <div class="atk-row" title="ATK4 (Agile Toolkit framework)">
+                        <div class="span12"><div class="atk-box ui-state-default ui-corner-all">
+                                <img src="./templates/images/atk4-logo.png" align="left" style="margin-right: 5px;"/>
+                                <span style="font-size: 30px; color: #666">&nbsp;PHP framework</span>
+                                <div style="color: #666">
+                                    สำหรับการพัฒนา Web Application ที่มีประสิทธิภาพสูง Agile Toolkit ได้แนวความคิดมาจาก (QT, Cocoa, .NET)
+                                    ซึ่งจะทำให้การพัฒนา Web aplication ของคุณนั้นแรงเต็มประสิทธิภาพพร้อมด้วยความปลอดภัย ซึ่งเหมาะสำหรับหรับนักพัฒนาทุกระดับ
+                                    เราจะมาเรียนรู้การใช้งาน Agile Toolkit กัน
+                                    <br/><a href="#"><i class="atk-icon atk-icons-nobg atk-icon-arrows-raquo"></i>เริ่มกันเลย...</a>
+                                </div>
+                            </div></div>
                     </div> 
                 </div>
-                <div class="span6">                    
-                    <div class="atk-box ui-widget-content ui-corner-all">
-                        <div id="sharepie"></div>
-                        <div id="pie"></div>
+                <div class="span6" title="Slide images">                    
+                    <div class="atk-box ui-widget-content ui-corner-all">                       
+                    <div id="slide" style="position: relative;">
+                        <img  height="180" src="./templates/images/slide/1.jpg" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; height: 180px; opacity: 1; width: 100%;">
+                        <img  height="180" src="./templates/images/slide/2.jpg" style="position: absolute; top: 180px; left: 0px; display: none; z-index: 3; opacity: 1; height: 0px; width: 100%;">                        
+                        <img  height="180" src="./templates/images/slide/3.jpg" style="position: absolute; top: 180px; left: 0px; display: none; z-index: 3; height: 0px; opacity: 1; width: 100%;">
+                        <img  height="180" src="./templates/images/slide/4.jpg" style="position: absolute; top: 180px; left: 0px; display: none; z-index: 3; height: 0px; opacity: 1; width: 100%;">
+                        <img  height="180" src="./templates/images/slide/5.jpg" style="position: absolute; top: 180px; left: 0px; display: none; z-index: 3; height: 0px; opacity: 1; width: 100%;">
                     </div>
-
+                    </div>
                 </div>
             </div>
 
@@ -46,6 +60,19 @@
             <div class="atk-row" title="3 column layout">
                 <div class="span12">
                     <?$Content?>
+                    <div>
+                        <!-- AddThis Button BEGIN -->
+                            <div class="addthis_toolbox addthis_default_style">
+                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                            <a class="addthis_button_tweet"></a>
+                            <a class="addthis_button_google_plusone at300b" g:plusone:size="medium"></a>
+                            <a class="addthis_button_pinterest_pinit"></a>
+                            <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+                            <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51a30a407f5964c5"></script>
+                            <!-- AddThis Button END -->
+                    </div>
                 </div>
             </div>
             <div class="atk-row" title="3 column layout">
@@ -89,72 +116,10 @@
     </div>
 </div>
 <script>
-/*
-    //$(document).ready(function() {
-    google.load("visualization", "1", {packages: ["corechart"]});
-
-    $('#sharepie').sharrre({
-        share: {
-            googlePlus: true,
-            facebook: true,
-            twitter: true,
-            digg: true,
-            delicious: true,
-            stumbleupon: true,
-            linkedin: true
-        },
-        url: 'http://code.google.com',
-        enableHover: false,
-        render: function(api, options) {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Social network');
-            data.addColumn('number', 'Sharing');
-            data.addRows(6);
-            data.setValue(0, 0, 'Google Plus');
-            data.setValue(0, 1, options.count.googlePlus);
-            data.setValue(1, 0, 'Facebook');
-            data.setValue(1, 1, options.count.facebook);
-            data.setValue(2, 0, 'Twitter');
-            data.setValue(2, 1, options.count.twitter);
-            data.setValue(3, 0, 'Digg');
-            data.setValue(3, 1, options.count.digg);
-            data.setValue(3, 0, 'Delicious');
-            data.setValue(3, 1, options.count.delicious);
-            data.setValue(4, 0, 'Stumbleupon');
-            data.setValue(4, 1, options.count.stumbleupon);
-            data.setValue(5, 0, 'Linkedin');
-            data.setValue(5, 1, options.count.linkedin);
-//console.log(options.count);
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie'));
-            chart.draw(data, {width: 500, height: 300, title: 'Total: ' + options.total, backgroundColor: 'none'});
-        }
+    $(document).ready(function() {
+        $('#slide').cycle({
+            fx: 'turnDown',
+            delay: -4000
+        });
     });
-    //});
-    $('#shareme').sharrre({
-        share: {
-            googlePlus: true,
-            facebook: true,
-            twitter: true,
-            digg: true,
-            delicious: true,
-            stumbleupon: true,
-            linkedin: true
-            //pinterest: true
-        },
-        buttons: {
-            googlePlus: {size: 'tall', annotation: 'bubble'},
-            facebook: {layout: 'box_count'},
-            twitter: {count: 'vertical'},
-            digg: {type: 'DiggMedium'},
-            delicious: {size: 'tall'},
-            stumbleupon: {layout: '5'},
-            linkedin: {counter: 'top'},
-            pinterest: {media: 'http://sharrre.com/img/example1.png', description: $('#shareme').data('text'), layout: 'vertical'}
-        },
-        enableHover: false,
-        enableCounter: false,
-        enableTracking: true
-    });
-    */
 </script>

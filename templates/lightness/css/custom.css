@@ -5,6 +5,24 @@
     Description:
         Custom style sheet.
 */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Code Pro Semibold'), local('SourceCodePro-Semibold'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/leqv3v-yTsJNC7nFznSMqZ6-ys_j0H4QL65VLqzI3wI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/leqv3v-yTsJNC7nFznSMqVkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
+}
 .ui-icon{
     float: left;
 }
@@ -60,6 +78,8 @@
     padding-bottom: 5px;
     border-bottom: 1px #BBB dotted;
     color: #555;
+    height: 20px;
+    overflow: hidden;
 }
 .none-top .txt-detail:last-child{
     border: none;
@@ -200,11 +220,11 @@ span.list-tr:first-child{
     border-right: 1px #CCC dotted;
 }
 div.span9 div.list-forum:nth-of-type(even){
-    background-color: #FEE;
+    background-color: #FEF;
 }
-div.span9 div.list-forum:nth-of-type(odd){
+/*div.span9 div.list-forum:nth-of-type(odd){
     background-color: #EEF;
-}
+}*/
 div.span9 div.list-forum:hover{
     background-color: #DDD;
 }
@@ -264,6 +284,18 @@ div.span9 div.list-forum:hover{
     padding-right: 15px;
     padding-top: 10px;
     vertical-align:top;
+    word-wrap: break-word;
+}
+.detail-space img{
+    max-width: 790px;
+}
+.detail-space>div{
+    max-width:790px;
+    overflow: auto;
+    position: relative;
+    border: 1px #CCC solid;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .topic-space,.reply-space{
     padding-bottom: 4px;
@@ -274,9 +306,16 @@ div.span9 div.list-forum:hover{
     background-color: whitesmoke;
     color: #666;
 }
+.topic-space div:last-child{
+    float: left;
+}
+.topic-space div:last-child span.topic-info{
+    padding-left: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    border-left: 1px #CCC dotted;
+}
 .reply-space{
-    border-top: 1px #EEE dotted;
-    background-color: transparent;
     color: #666;
 }
 .topic-bottom{
@@ -295,4 +334,7 @@ div.span9 div.list-forum:hover{
 }
 .topic-bottom span.plus-one:hover{
     background-color: #EB8F00;
+}
+.addthis_default_style{
+    margin-bottom: -10px;
 }

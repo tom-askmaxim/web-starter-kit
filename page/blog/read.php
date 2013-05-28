@@ -37,18 +37,18 @@ class page_blog_read extends Page {
 
         $form = $this->add('Form'); //->addClass('atk-row');
         $form->setModel($model_comment, false);
-        $form->setModel($model_comment,false);
+        $form->setModel($model_comment, false);
         if (!$this->api->auth->isLoggedIn())
             $form->addField('line', 'user_comment', 'Guest name')->validateNotNull()->addClass('span8');
         $form->addField('hidden', 'bid')->set($this->recall('blogid', $_GET['id']));
         $form->addField('hidden', 'getans')->set($_SESSION['sess1'] + $_SESSION['sess2']);
         $form->addField('text', 'comment')->addClass('span12');
         $form->addSubmit('Save your comment');
-        
+
         $lister = $this->add('ListComment', null, 'ListComment', 'ListComment');
         $lister->setModel($model_comment)->addCondition('blog_id', $this->recall('blogid', $_GET['id'])); //$_GET['id'] ? $_GET['id'] : $form->get('bid')
         $paginator = $lister->add('Paginator', NULL, 'Paginator');
-        $paginator->ipp(10);
+        $paginator->ipp(5);
         //$model_comment->debug();
 
         $sec_image_field = $form->addField('line', 'sec_image', 'Security code')->addClass('span3')
@@ -59,8 +59,8 @@ class page_blog_read extends Page {
         }
 
         if ($form->isSubmitted()) {
-            if(!$this->api->auth->isLoggedIn()){
-               $model_comment->set('user_comment', $form->get('user_comment'));
+            if (!$this->api->auth->isLoggedIn()) {
+                $model_comment->set('user_comment', $form->get('user_comment'));
             }
             $getans = $form->get('getans');
             if ($form->get('sec_image') != $getans) {
@@ -73,19 +73,27 @@ class page_blog_read extends Page {
             $lister->js(null, $form->js(null, $form->js()->reload())->univ()->successMessage('Save data completed'))->reload()->execute();
             //$form->js(true)->univ()->successMessage('OK')->execute();
         }
-        $this->api->jui->addStaticInclude('jwysiwyg/jquery.wysiwyg');
-        $this->api->jui->addStaticInclude('jwysiwyg/controls/wysiwyg.image');
-        $this->api->jui->addStaticInclude('jwysiwyg/controls/wysiwyg.link');
-        $this->api->jui->addStaticInclude('jwysiwyg/controls/wysiwyg.table');
-        $this->api->jui->addStaticInclude('codesnippet/jquery.snippet.min');
+//        $this->api->jui->addStaticInclude('jwysiwyg/jquery.wysiwyg');
+//        $this->api->jui->addStaticInclude('jwysiwyg/controls/wysiwyg.image');
+//        $this->api->jui->addStaticInclude('jwysiwyg/controls/wysiwyg.link');
+//        $this->api->jui->addStaticInclude('jwysiwyg/controls/wysiwyg.table');
+//        $this->api->jui->addStaticInclude('codesnippet/jquery.snippet.min');
+//        $form->getElement('comment')
+//                ->js(true)
+//                ->wysiwyg(array(
+//                    'controls' => [
+//                        'insertTable' => false,
+//                        'h1' => false,
+//                        'h2' => false
+//                    ]
+//        ));
+        $this->api->jui->addStaticInclude('ckeditor/ckeditor');
+        $this->api->jui->addStaticInclude('ckeditor/adapter/jquery');
         $form->getElement('comment')
                 ->js(true)
-                ->wysiwyg(array(
-                    'controls' => [
-                        'insertTable' => false,
-                        'h1' => false,
-                        'h2' => false
-                    ]
+                ->ckeditor(array(
+                    'skin' => 'moonocolor',
+                    'toolbar' => 'basic'
         ));
 
 
@@ -110,13 +118,13 @@ class ListComment extends CompleteLister {
         if ($this->current_row['member_comment']) {
             $user = $this->api->add('Model_User');
             $data = $user->getBy('id', $this->current_row['member_comment']);
-            $url = '../../user/?iden='.$data['identifier'];
+            $url = '../../user/?iden=' . $data['identifier'];
             $user_link = $url;
-            $user_title = 'See '.$data['display_name'];
+            $user_title = 'See ' . $data['display_name'];
         }
         $this->current_row['image'] = '<img src="#">' . $this->current_row['keywords'];
         $this->current_row_html['desciption'] = $this->api->replace_string($this->current_row['comment']);
-        $this->current_row_html['display_name'] = $this->current_row['member_comment'] ? '<a href="'.$url.'">' . $data['display_name'] . '</a>' : $this->current_row['user_comment'];
+        $this->current_row_html['display_name'] = $this->current_row['member_comment'] ? '<a href="' . $url . '">' . $data['display_name'] . '</a>' : $this->current_row['user_comment'];
         $this->current_row['user_link'] = $user_link;
         $this->current_row['user_title'] = $user_title;
         //$this->current_row['link'] = $this->api->getDestinationURL('blog/read', array('id' => $this->current_row['id']));

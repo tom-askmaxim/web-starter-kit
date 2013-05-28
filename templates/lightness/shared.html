@@ -12,23 +12,21 @@
                 <meta name="description" content="<?page_description?>Echo Analize Software<?/?>" />
                 <meta name="keywords" content="<?page_keywords?>Echo,Analize,Software,Opensource<?/?>" />
                 <meta name="author" content="Sornarin Bunyapitaks(tom-akmaxim@admin.in.th)" />
+                
                 <!--
                     Author : Sornarin Bunyapitaks
                     Email : tom-akmaxim@admin.in.th
                     Copyright : www.echoanalize.com
                 -->
+                <script><?$custom_js?></script>
 		<?$js_include?>
 		<!--[if IE 8]>
 			<link rel="stylesheet" type="text/css" href="<?template?>css/ie8.css<?/?>"/>
 			<script type="text/javascript" src="<?template?>css/ie8.js<?/?>"></script>
 		<![endif]-->
-		<script type="text/javascript">
-			$(function(){
-				<?$document_ready?>
-			});
-		</script>
 	</head>
 	<body>
+            <script src="<?$template?>../js/custom.js" type="text/javascript"></script>
 		<div id="atk-layout" class="atk-wrapper">
                     <div id="header" style="border-bottom: 1px #999 dotted; padding-bottom: 5px;">
 				<?logo?><div id="atk-logo" class="ui-widget-header float-left"><a 
@@ -71,5 +69,10 @@
 		</div>
 		<?/?>
 		<div id="atk-growl-holder" class="atk-growl"></div>
+                <script type="text/javascript">
+			$(function(){
+				<?$document_ready?>
+			});
+		</script>
 	</body>
 </html>

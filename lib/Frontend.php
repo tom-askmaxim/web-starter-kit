@@ -23,8 +23,8 @@ class Frontend extends ApiFrontend {
                 ->setParent($this->pathfinder->base_location);
         $this->addLocation('.', array(
                     'addons' => 'ambient-addons',
-                    'css'=>'ambient-addons/cms/templates/default/css',
-                    'template'=>'ambient-addons/cms/templates'
+                    'css' => 'ambient-addons/cms/templates/default/css',
+                    'template' => 'ambient-addons/cms/templates'
                         )
                 )
                 ->setParent($this->pathfinder->base_location)
@@ -77,6 +77,8 @@ class Frontend extends ApiFrontend {
 
         //$this->addLayout('UserMenu');
         //$this->auth->check();
+        
+        $this->template->setHTML('custom_js','var siteName = "'.$this->api->getConfig('site_url').'";');
     }
 
     function layout_UserMenu() {
@@ -101,17 +103,21 @@ class Frontend extends ApiFrontend {
         header('Location: ' . $this->pm->base_path . 'examples');
         exit;
     }
-    
-    function replace_string($subject){
+
+    function replace_string($subject) {
         $pattern[] = "<script>";
-        $pattern[] = "</script>";        
+        $pattern[] = "</script>";
+        $pattern[] = "<?php";
+        
         $replacement[] = '<[script]>';
         $replacement[] = '<[/script]>';
+        $pattern[] = "<[?php";
+        
         foreach ($pattern as $key => $value) {
             $subject = str_replace($value, $replacement[$key], $subject);
         }
         return $subject;
-        
     }
+
 
 }

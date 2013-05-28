@@ -11,7 +11,7 @@ $config['url_postfix'] = '/';
 $config['url_prefix'] = '';
 $config['auth']['key'] = 'analize-secret';
 $config["frontend"]["token"] = 'secret-token';
-$config['site_name'] = 'echoanalize.com';
+$config['site_url'] = 'echo_analize';
 
 // Text Editor config
 $config['editor']['jwysiwyg']['basic'] = array();
